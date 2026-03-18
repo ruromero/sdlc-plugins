@@ -8,7 +8,7 @@ skills via Claude Code's plugin system.
 
 ## Available Plugins
 
-### sdlc-workflow (v0.1.0)
+### sdlc-workflow
 
 AI-assisted SDLC workflow skills:
 
@@ -25,7 +25,7 @@ AI-assisted SDLC workflow skills:
 ### 1. Add the marketplace
 
 ```
-/plugin marketplace add /path/to/sdlc-plugins
+/plugin marketplace add mrizzi/sdlc-plugins
 ```
 
 ### 2. Install the plugin
