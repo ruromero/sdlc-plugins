@@ -21,7 +21,15 @@ This document describes how to release a new version of the sdlc-workflow plugin
 
 4. **Push to the default branch.**
 
-5. **Users update** by running:
+5. **Create a GitHub release** — tag the release commit and create a GitHub release with notes from the changelog:
+   ```bash
+   git tag vX.Y.Z <commit-sha>
+   git push origin vX.Y.Z
+   gh release create vX.Y.Z --title "vX.Y.Z" --latest --notes "<changelog section for this version>"
+   ```
+   Use the corresponding `CHANGELOG.md` section as the release notes body.
+
+6. **Users update** by running:
    ```
    /plugin marketplace update
    ```
