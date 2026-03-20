@@ -5,6 +5,24 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-03-20
+
+### Added
+
+- `verify-pr` skill for PR verification against Jira tasks
+
+### Changed
+
+- Added CONVENTIONS.md fill-in prompt to setup skill
+
+### Fixed
+
+- Added markdown footnote to verify-pr GitHub PR comment
+
+### Documentation
+
+- Added version bump decision guide with y-stream vs z-stream criteria
+
 ## [0.3.2] - 2026-03-20
 
 ### Changed
