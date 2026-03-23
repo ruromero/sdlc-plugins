@@ -5,6 +5,16 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.2] - 2026-03-23
+
+### Changed
+
+- Added documentation-impact evaluation to planning and implementation skills
+- Enforced DRY principle across planning and implementation skills
+- Added GitHub Issue custom field to setup skill and project configuration
+- Added GitHub issue Closes reference to PR description
+- Added Markdown link for Jira issue in PR description
+
 ## [0.4.1] - 2026-03-23
 
 ### Fixed
