@@ -13,6 +13,7 @@
 - Feature issue type ID: {{feature-issue-type-id}}
 - Git Pull Request custom field: {{custom-field-id}}
 - GitHub Issue custom field: {{custom-field-id}}
+- Default component: {{component-name}}
 
 ## Code Intelligence
 

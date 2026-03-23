@@ -295,7 +295,15 @@ Use:
 jira.create_issue
 jira.create_subtask
 
-Every created issue **must** include the `ai-generated-jira` label to mark it as AI-generated. Pass the label via:
+Every created issue **must** include the `ai-generated-jira` label to mark it as AI-generated.
+
+Look up the **Default component** from the project's **Jira Configuration** section in CLAUDE.md. If configured, include it in every created issue:
+
+```
+additional_fields: { "labels": ["ai-generated-jira"], "components": [{"name": "<component-name>"}] }
+```
+
+If no Default component is configured, omit the `components` field:
 
 ```
 additional_fields: { "labels": ["ai-generated-jira"] }

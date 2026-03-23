@@ -12,6 +12,10 @@ skills via Claude Code's plugin system.
 
 AI-assisted SDLC workflow skills:
 
+- **suggest-feature** — Analyze project documentation, codebase, backlog, and
+  optionally market trends to suggest new features. Creates Jira Feature issues
+  ready for `/plan-feature`.
+
 - **plan-feature** — Convert a Jira feature into an implementation plan with
   structured Jira tasks. Analyzes repositories using Serena LSP, builds an
   impact map, and creates linked Jira tasks.

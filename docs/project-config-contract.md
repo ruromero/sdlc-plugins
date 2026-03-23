@@ -83,6 +83,7 @@ that skills need to create issues, query tasks, and update fields.
 |---|---|---|
 | Git Pull Request custom field | Custom field ID for storing PR URLs (requires ADF format) | `customfield_10875` |
 | GitHub Issue custom field | Custom field ID containing a GitHub issue URL (plain string or ADF) | `customfield_10747` |
+| Default component | Jira component name to assign to AI-generated issues and to filter backlog queries | `backend` |
 | Default labels | Labels to apply to AI-generated issues | `ai-generated-jira` |
 
 #### Structure
@@ -95,6 +96,7 @@ that skills need to create issues, query tasks, and update fields.
 - Feature issue type ID: 10142
 - Git Pull Request custom field: customfield_10875
 - GitHub Issue custom field: customfield_10747
+- Default component: backend
 ```
 
 #### How skills use it
@@ -104,6 +106,7 @@ that skills need to create issues, query tasks, and update fields.
 - "Use the Feature issue type ID when creating feature-level issues."
 - "If a Git Pull Request custom field is configured, update it with the PR URL."
 - "If a GitHub Issue custom field is configured, read it from the Jira issue and add a `Closes` reference to the PR description."
+- "If a Default component is configured, assign it to AI-created issues and use it to filter backlog queries."
 
 ---
 

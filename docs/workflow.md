@@ -6,7 +6,46 @@ This document describes the execution workflow for the sdlc-workflow plugin skil
 
 ## Execution Phases
 
-The workflow follows three phases: **Plan**, **Implement**, and **Verify**.
+The workflow follows four phases: **Suggest**, **Plan**, **Implement**, and **Verify**.
+
+### Suggest Phase
+
+**Skill:** `/sdlc-workflow:suggest-feature`
+
+Analyzes project documentation, codebase, existing backlog, and optionally market trends to suggest new features.
+
+**Inputs:**
+- Repository name (optional — narrows analysis to a single repo)
+
+**Invocation:**
+
+```
+/sdlc-workflow:suggest-feature
+/sdlc-workflow:suggest-feature trustify
+```
+
+**Workflow:**
+1. Validate Project Configuration in CLAUDE.md
+2. Ask for strategic direction (innovate, stabilize, tech debt, bugs, open source, product, or decide later)
+3. Ask for analysis depth (quick or deep)
+4. Read project documentation (README, architecture, conventions, roadmap)
+5. Read existing backlog (Jira features/epics + GitHub Issues)
+6. Optionally research market trends and competitors
+7. Analyze codebase for improvement signals (deep mode only, focused on 2–3 categories matching the strategic direction)
+8. Generate ranked, evidence-based feature suggestions
+9. Create Jira Feature issues for user-approved suggestions
+
+**Output:**
+- Feature suggestions presented to the user for selection
+- Jira Feature issues created for approved suggestions (labeled `ai-generated-jira`, `ai-suggested`)
+- Each feature is structured for immediate consumption by `/plan-feature`
+
+**Guardrails:**
+- Read-only — no file modifications permitted
+- All output goes to Jira, never to the filesystem
+- The user selects which suggestions become Jira features — no issues created without approval
+
+---
 
 ### Plan Phase
 

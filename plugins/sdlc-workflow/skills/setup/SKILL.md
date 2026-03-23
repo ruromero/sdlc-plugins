@@ -58,12 +58,14 @@ Otherwise, determine which fields are missing and gather them:
    c. Use `getJiraProjectIssueTypesMetadata` with the chosen project key to list issue types and ask the user which one is the Feature type (this provides the Feature issue type ID).
    d. Ask the user if they have a Git Pull Request custom field ID (optional).
    e. Ask the user if they have a GitHub Issue custom field ID (optional).
+   f. Ask the user if they have a default Jira component name to assign to AI-generated issues (optional).
 3. If no Atlassian MCP is available, ask the user to provide the missing fields directly:
    - Project key
    - Cloud ID (Jira instance URL or cloud UUID)
    - Feature issue type ID
    - Git Pull Request custom field (optional)
    - GitHub Issue custom field (optional)
+   - Default component (optional)
 
 Only ask for fields that are not already configured.
 
