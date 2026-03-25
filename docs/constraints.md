@@ -68,6 +68,8 @@ existing instruction in a SKILL.md or CLAUDE.md file.
 | 5.4 | Code MUST NOT duplicate existing functionality — reuse or extend existing utilities, helpers, and shared modules when equivalent logic exists. | `implement-task/SKILL.md` — Step 4, Step 6, Step 9 |
 | 5.5 | AI MUST NOT start work autonomously — a human must trigger it. | `methodology.md` — Core Principles (Human Driven Workflow) |
 | 5.6 | After implementation, each new feature MUST be traced through its complete data-flow lifecycle (input → processing → output) — incomplete paths must be fixed before committing. | `implement-task/SKILL.md` — Step 9 |
+| 5.7 | Modified or created code that implements an interface, trait, or type contract MUST have all required methods, properties, and type signatures verified as complete before committing. | `implement-task/SKILL.md` — Step 9 |
+| 5.8 | Modified or created code MUST be compared against sibling implementations for parity on cross-cutting concerns (capabilities, error handling, logging, configuration) — gaps must be fixed or explicitly approved by the user before committing. | `implement-task/SKILL.md` — Step 9 |
 
 ---
 
@@ -76,6 +78,6 @@ existing instruction in a SKILL.md or CLAUDE.md file.
 Each constraint above references its source. The full source files are:
 
 - `plugins/sdlc-workflow/skills/plan-feature/SKILL.md` — Guardrails (§1.1–1.3), Task Description Template (§4.1–4.10)
-- `plugins/sdlc-workflow/skills/implement-task/SKILL.md` — Important Rules (§1.4–1.6, §5.1–5.3), Step 4/6/9 (§5.4), Step 5 (§3.1), Step 9 (§2.1–2.3, §5.6), Step 10 (§3.2)
+- `plugins/sdlc-workflow/skills/implement-task/SKILL.md` — Important Rules (§1.4–1.6, §5.1–5.3), Step 4/6/9 (§5.4), Step 5 (§3.1), Step 9 (§2.1–2.3, §5.6–5.8), Step 10 (§3.2)
 - `plugins/sdlc-workflow/skills/define-feature/SKILL.md` — Guardrails (§1.7–1.8), Important Rules (§1.9)
 - `docs/methodology.md` — Core Principles (§2.1, §3.2, §5.5)

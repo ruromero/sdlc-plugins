@@ -366,6 +366,53 @@ Output the traced data flows and their completeness status to the user before pr
 > - `POST /api/v2/sbom` → parse request ✓ → validate ✓ → persist to DB ✓ → return response ✓ — **COMPLETE**
 > - `parseLicense()` → extract license ID ✓ → resolve to SPDX ✓ → attach to package ✗ — **INCOMPLETE** (output not connected)
 
+### Contract & sibling parity
+
+Verify that modified or created code fully honors its type contracts and maintains
+parity with sibling implementations.
+
+#### Contract verification
+
+1. **Identify contracts**: for each file modified or created, determine whether the code
+   implements or extends any interface, trait, abstract class, protocol, or type contract.
+   Use Serena's `find_symbol` or Grep to locate the contract definition.
+2. **Check completeness**: verify that all required methods, properties, and type signatures
+   defined by the contract are implemented. Check that return types cover all variants
+   (e.g., both sync and async, both success and error paths, all union/enum members).
+3. **Check semantics**: verify that method signatures match the contract — parameter types,
+   return types, and nullability/optionality must align.
+4. **Flag gaps**: list any missing or incomplete contract implementations. For each gap,
+   state which contract member is missing and what is required.
+
+#### Sibling parity analysis
+
+1. **Identify siblings**: reuse the sibling files identified during the convention
+   conformance analysis in Step 4. If no siblings were identified (e.g., the file is
+   unique), skip this analysis.
+2. **Compare capabilities**: for each sibling, compare cross-cutting concerns against the
+   new or modified code:
+   - Shared capabilities (e.g., all providers support CRUD, all handlers validate input)
+   - Error handling (e.g., all siblings wrap errors the same way)
+   - Logging and observability (e.g., all siblings log at the same points)
+   - Configuration options (e.g., all siblings accept the same option types)
+3. **Flag parity gaps**: list any capabilities present in siblings but missing from the
+   new implementation. For each gap, state which sibling provides the capability and
+   what is missing.
+4. **Fix or confirm**: if gaps are found, fix them before proceeding. If a gap is
+   intentional (the new code deliberately omits a capability), ask the user to confirm
+   before proceeding.
+
+Output the contract verification and sibling parity results to the user before proceeding.
+
+> **Example output:**
+>
+> **Contract & sibling parity results:**
+> - `StorageProvider` implements `Provider` trait — `get()` ✓, `list()` ✓, `delete()` ✓, `update()` ✗ — **GAP** (missing `update` method)
+> - Sibling parity with `S3Provider`, `GcsProvider`:
+>   - Retry logic ✓ (all siblings use exponential backoff)
+>   - Logging ✗ — `StorageProvider` missing `info!()` on successful operations — **GAP**
+>   - Config options ✓ (all accept `ProviderConfig`)
+
 ## Step 10 – Commit and Push
 
 Commit following the Conventional Commits specification (https://www.conventionalcommits.org/en/v1.0.0/):
