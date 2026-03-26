@@ -5,6 +5,17 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2026-03-26
+
+### Changed
+
+- Added review feedback resolution and full-chain root-cause investigation to verify-pr
+- Added contract and sibling parity self-verification check to implement-task
+
+### Documentation
+
+- Added missing define-feature skill to README
+
 ## [0.5.0] - 2026-03-25
 
 ### Added
