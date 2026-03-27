@@ -5,6 +5,13 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.4] - 2026-03-27
+
+### Changed
+
+- Added universality-test classification gate to verify-pr root-cause investigation, preventing skill drift from repo-specific patterns
+- Added test convention analysis to implement-task Step 4, discovering sibling test patterns for use during test writing
+
 ## [0.5.3] - 2026-03-27
 
 ### Changed
