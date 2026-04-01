@@ -5,6 +5,13 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.6] - 2026-04-01
+
+### Changed
+
+- Added caller-site parity check to implement-task sibling parity analysis
+- Updated verify-pr workflow diagram with root-cause task
+
 ## [0.5.5] - 2026-03-27
 
 ### Changed
