@@ -5,6 +5,15 @@ All notable changes to the sdlc-workflow plugin are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.7] - 2026-04-01
+
+### Changed
+
+- Added method-vs-fact secondary test to verify-pr root-cause universality gate
+- Added code quality and test assertion guidance to implement-task
+
+Thanks to @ruromero for his contributions to this release!
+
 ## [0.5.6] - 2026-04-01
 
 ### Changed
